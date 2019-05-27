@@ -6,11 +6,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyBeJ0rOuNv-F5RJ9PTPYRzRLkY304TYZks',
-    authDomain: 'comica-829c4.firebaseapp.com',
-    databaseURL: 'https://comica-829c4.firebaseio.com',
-    projectId: 'comica-829c4',
-    storageBucket: 'comica-829c4.appspot.com',
-    messagingSenderId: '535554607255'
+    apiKey: 'AIzaSyATimnbxvjPsFp4WKi-h1isG3ijN7bRA6c',
+    authDomain: 'tresdelicias-2257c.firebaseapp.com',
+    databaseURL: 'https://tresdelicias-2257c.firebaseio.com',
+    projectId: 'tresdelicias-2257c',
+    storageBucket: 'tresdelicias-2257c.appspot.com',
+    messagingSenderId: '474204442061',
+    appId: '1:474204442061:web:46411c99101ce22f'
   }
 };
