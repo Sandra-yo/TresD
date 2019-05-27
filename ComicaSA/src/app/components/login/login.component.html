@@ -1,0 +1,30 @@
+<div class="body">
+
+  <div class="ui negative message margin-150-auto" *ngIf="showMessage">
+    <i class="close icon" (click)="onClose()"></i>
+    <div class="header">
+      No se pudo iniciar sesion
+    </div>
+    <p> Usuario y/o contraseña invalidos
+    </p>
+  </div>
+
+  <div class="ui form margin-150-auto">
+    <div class="field txt-centered">
+      3 Delicias
+    </div>
+    <div class="field">
+      <img class="ui small centered circular image" src="./../../../assets/images/usuario.png">
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="" placeholder="Email" [(ngModel)]="inputs.email">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="" placeholder="Password" [(ngModel)]="inputs.password">
+    </div>
+    <div class="ui button fluid" (click)="onLogin()"> Login </div>
+    <div class="ui button fluid" style="margin-top: 5px;" (click)="onRegister()"> Registrarse </div>
+  </div>
+</div>

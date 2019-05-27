@@ -1,0 +1,26 @@
+<div class="ui link cards f-justify-space-around">
+  <div class="card" *ngFor="let category of this.categoriesList" (click)="onSelectCard(category)">
+    <div class="image">
+      <img [src]="category.imagen" style="height: 200px;">
+    </div>
+    <div class="content">
+      <div class="header">{{ category.nombre }}</div>
+      <div class="meta">
+        <a>Provedor: </a> {{ category.proveedorId }}
+      </div>
+      <div class="description">
+        {{ category.descripcion }}
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+        Creado el {{ this.formatDate(category.creado) }}
+      </span>
+      <span>
+        <i class="bell icon"></i>
+        {{ category.estado }}
+      </span>
+    </div>
+  </div>
+  
+</div>

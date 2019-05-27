@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-image: url('./assets/images/wall_4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.flex {
+  display: flex;
+}
+
+.f-justify-center {
+  justify-content: center;
+}
+
+.f-justify-right {
+  justify-content: right;
+}
+
+.f-justify-space-around {
+  justify-content: space-around;
+}
+
+.f-dir-column {
+  flex-direction: column;
+}
+
+.align-rigth {
+  float: right;
+  width: 80%;
+  margin: 15px;
+
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+}

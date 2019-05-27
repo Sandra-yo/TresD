@@ -1,0 +1,34 @@
+/* .more:hover {
+    background-color: green;
+}
+
+.less:hover {
+    background-color: red;
+}
+ */
+
+ .align-vertical {
+    display: flex;
+    align-items: center;
+    margin: 2px;
+ }
+
+ .less:hover, .more:hover {
+    transform: scale(1.5);
+ }
+
+ .less:active, .more:active {
+     transform: scale(1.0);
+ }
+
+ .margin-150-auto {
+    position: fixed;
+    z-index: 10;
+    left: 35%;
+    /*margin: 0px auto;*/
+    margin: 0px;
+    width: 40%;
+    background-color: rgba(226, 195, 195, 0.7);
+    border-radius: 10px;
+    padding: 15px;
+  }

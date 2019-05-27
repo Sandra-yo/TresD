@@ -1,0 +1,33 @@
+<div class="ui fluid icon input mb-5">
+  <input type="text" placeholder="Search an user..." (input)="onSearch($event)" > <!-- [(ngModel)]="this.serach" -->
+  <i class="search icon"></i>
+</div>
+
+<div class="ui link cards f-justify-space-around">
+  <div class="card" *ngFor="let user of this.userList" (click)="onSelectCard(user)">
+    
+      <div class="image">
+        <img [src]="user.imagen" style="height: 200px;">
+      </div>
+      <div class="content">
+        <div class="header">{{ user.nombre }}</div>
+        <div class="meta">
+          <a>tipo: </a> {{ user.tipo }}
+        </div>
+        <div class="description">
+
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated">
+          Creado el {{ this.formatDate(user.creado) }}
+        </span>
+        <span>
+          <i class="bell icon"></i>
+
+        </span>
+      </div>
+    </div>
+
+
+</div>

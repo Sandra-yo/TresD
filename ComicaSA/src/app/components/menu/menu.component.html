@@ -1,0 +1,44 @@
+<div style="position: fixed; height: 100%;">
+  <div class="ui vertical menu" style="height: 100%;">
+    <div class="item">
+      <img class="ui medium circular image" [src]="this.input.imagen" style="height: 150px;">
+    </div>
+    <div class="flex f-justify-center">
+      {{ this.input.nombre }}
+    </div>
+
+    <a class="item" (click)="onSelected('dashboard')">Inicio</a>
+
+    <!--     <div class="item">
+      <div class="header">Productos</div>
+      <div class="menu" (click)="onSelected('list')">
+        <a class="item" (click)="onSelected('new')">Agregar</a>
+        <a class="item">Listar</a>
+      </div>
+    </div> -->
+    <div class="item" *ngIf="!onlyAdministrador">
+      <div class="header">Carrito</div>
+      <div class="menu">
+        <a class="item" (click)="onSelected('cart')" >Agregados</a>
+        <a class="item">Comprados</a>
+      </div>
+    </div>
+    <div class="item" *ngIf="onlyAdministrador">
+      <div class="header">Administrador</div>
+      <div class="menu">
+        <a class="item" (click)="onSelected('product')">Productos</a>
+        <a class="item" (click)="onSelected('newCategory')">Categorias</a>
+        <a class="item" (click)="onSelected('record')">Historial</a>
+        <a class="item" (click)="onSelected('users')">Usuarios</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="header">Mi cuenta</div>
+      <div class="menu">
+        <a class="item" (click)="onSelected('account')">Editar cuenta</a>
+        <a class="item">Acerca de...</a>
+        <a class="item" (click)="onLogout()">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>

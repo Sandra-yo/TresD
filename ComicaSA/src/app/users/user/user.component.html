@@ -1,0 +1,19 @@
+<div>
+    <app-menu></app-menu>
+  
+    <div class="align-rigth">
+      <h2 class="ui header">Usuarios</h2>
+      <div class="ui green two item menu">
+        <a class="item" [ngClass]="{'active': this.select.agregar}" (click)="onSelected('agregar')">
+          Agregar
+        </a>
+        <a class="item" [ngClass]="{'active': this.select.listar}" (click)="onSelected('listar')">
+          Listar
+        </a>
+      </div>
+  
+      <app-add-user *ngIf="this.select.agregar" [inputProduct]="productEdit" (changeOptionProduct)="onSelected('listar')"></app-add-user>
+      <app-list-user *ngIf="this.select.listar" (_userSelected)="_outProduct($event)"></app-list-user>
+  
+    </div>
+  </div>

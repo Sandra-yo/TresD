@@ -1,0 +1,125 @@
+<div class="body">
+  <div class="ui form center-form">
+    <h4 class="ui dividing header">Registro</h4>
+    <!-- Datos personales -->
+
+
+    <div class="item" style="display: flex;">
+      <div class="ui image" style="    margin: 10px; width: 20%;">
+        <img (click)="onFileSelected()" title="Subir imagen" [src]="this.input.imagen" width="150px" height="150px">
+      </div>
+      <div class="content" style="width: 80%;">
+
+        <div class="field">
+          <label>Nombre completo</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="text" placeholder="Nombre" [(ngModel)]="this.input.nombre">
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Apellidos" [(ngModel)]="this.input.apellidos">
+            </div>
+          </div>
+        </div>
+        <div class="fields">
+          <div class="seven wide field">
+            <label>Email</label>
+            <input type="text" placeholder="Email" [(ngModel)]="this.input.email">
+          </div>
+          <div class="seven wide field">
+            <label>Password</label>
+            <input type="password"  placeholder="Password" [(ngModel)]="this.input.password">
+          </div>
+          <div class="three wide field">
+            <label>Edad</label>
+            <input type="number" maxlength="3" placeholder="Edad" [(ngModel)]="this.input.edad">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Direccion -->
+    <h4 class="ui dividing header">Dirección</h4>
+    <div class="fields">
+      <div class="seven wide field">
+        <label>Colonia</label>
+        <input type="text" placeholder="Colonia" [(ngModel)]="this.input.direccion.colonia">
+      </div>
+      <div class="seven wide field">
+        <label>Calle</label>
+        <input type="text" placeholder="Calle" [(ngModel)]="this.input.direccion.calle">
+      </div>
+      <div class="three wide field">
+        <label>Numero</label>
+        <input type="number" placeholder="Numero" [(ngModel)]="this.input.direccion.numero">
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label>Estado</label>
+        <input type="text" placeholder="Estado" [(ngModel)]="this.input.direccion.estado">
+      </div>
+      <div class="field">
+        <label>Pais</label>
+        <input type="text" placeholder="Pais" [(ngModel)]="this.input.direccion.pais">
+      </div>
+    </div>
+    <!-- TARJETA DE CREDITO -->
+    <h4 class="ui dividing header">Tarjeta</h4>
+    <div class="three fields">
+      <div class="field">
+        <label>Tipo</label>
+        <input type="text" placeholder="Tipo" [(ngModel)]="this.input.tarjeta.tipo">
+      </div>
+      <div class="field">
+        <label>Numero</label>
+        <input type="text" placeholder="Numero" [(ngModel)]="this.input.tarjeta.numero">
+      </div>
+      <div class="field">
+        <label>CVC</label>
+        <input type="text" placeholder="CVC" [(ngModel)]="this.input.tarjeta.cvc">
+      </div>
+    </div>
+    <div class="field">
+      <label>Expiración</label>
+      <div class="two fields">
+        <div class="field">
+          <select class="ui fluid search dropdown" [(ngModel)]="this.input.tarjeta.expiracion.mes">
+            <option value="">Mes</option>
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+          </select>
+        </div>
+        <div class="field">
+          <input type="number" placeholder="Año" [(ngModel)]="this.input.tarjeta.expiracion.ano">
+        </div>
+      </div>
+    </div>
+
+    <div class="two fields">
+      <div class="field">
+      </div>
+      <div class="field" style="padding-left: 15px; padding-right: 15px;">
+        <div class="two fields">
+          <div class="field ui primary button" style="margin-right: 1px;" (click)="onGuardar()">
+            Guardar
+          </div>
+          <div class="field ui button" style="margin-left: 1px;">
+            Descartar
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

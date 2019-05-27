@@ -1,0 +1,83 @@
+<div class="ui form">
+
+  <div class="item" style="display: flex;">
+    <div class="ui image" style="    margin: 10px; width: 20%;">
+      <img (click)="onFileSelected()" title="Subir imagen" [src]="this.input.imagen" width="150px" height="150px">
+    </div>
+    <div class="content" style="width: 80%;">
+
+
+      <div class="two fields">
+        <div class="field">
+          <label>Nombre</label>
+          <input type="text" placeholder="Nombre" [(ngModel)]="this.input.nombre">
+        </div>
+        <div class="field">
+          <label>Telefono</label>
+          <input type="text" placeholder="Telefono" [(ngModel)]="this.input.telefono">
+        </div>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="Email" [(ngModel)]="this.input.email">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui sizer vertical">
+    <div class="ui tiny header">Direccion</div>
+    <div class="two fields">
+      <div class="field">
+        <label>Colonia</label>
+        <input type="text" placeholder="Colinia" [(ngModel)]="this.input.direccion.colonia">
+      </div>
+      <div class="field">
+        <label>Calle</label>
+        <input type="text" placeholder="calle" [(ngModel)]="this.input.direccion.calle">
+      </div>
+      <div class="field">
+        <label>Numero</label>
+        <input type="number" placeholder="Numero" [(ngModel)]="this.input.direccion.numero">
+      </div>
+    </div>
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+      <label>Estado</label>
+      <input type="text" placeholder="Estado" [(ngModel)]="this.input.direccion.estado">
+    </div>
+    <div class="field">
+      <label>Pais</label>
+      <input type="text" placeholder="Pais" [(ngModel)]="this.input.direccion.pais">
+    </div>
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+    </div>
+    <div class="field">
+      <div class="two fields" *ngIf="!this.statusEdit; else elseTemplate">
+        <div class="field positive ui button" style="margin-right: 1px;" (click)="onGuardar()">
+          Guardar
+        </div>
+        <div class="field negative ui button" style="margin-left: 1px;" (click)="onDescartar()">
+          Descartar
+        </div>
+      </div>
+      <ng-template #elseTemplate>
+        <div class="two fields">
+          <div class="field positive ui button" style="margin-right: 1px;" (click)="onEditar()">
+            Editar
+          </div>
+          <div class="field negative ui button" style="margin-left: 1px;" (click)="onEliminar()">
+            Eliminar
+          </div>
+        </div>
+
+      </ng-template>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,75 @@
+<div class="ui form">
+
+
+  <div class="item" style="display: flex;">
+    <div class="ui image" style="    margin: 10px; width: 20%;">
+      <img (click)="onFileSelected()" title="Subir imagen" [src]="this.input.imagen" width="150px" height="150px">
+    </div>
+    <div class="content" style="width: 80%;">
+      <div class="two fields">
+        <div class="field">
+          <label>Nombre</label>
+          <input type="text" placeholder="Nombre" [(ngModel)]="this.input.nombre">
+        </div>
+        <div class="field">
+          <label>Categoria</label>
+          <select class="ui fluid dropdown" [(ngModel)]="this.input.categoriaId">
+            <option *ngFor="let category of categoriesList;" value="{{ category.id }}">{{ category.nombre }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label>Costo</label>
+          <input type="number" placeholder="Costo" [(ngModel)]="this.input.costo">
+        </div>
+        <div class="field">
+          <label>Cantidad</label>
+          <input type="number" placeholder="Cantidad" [(ngModel)]="this.input.cantidad">
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="field">
+      <label>Estado</label>
+      <select class="ui fluid dropdown" [(ngModel)]="this.input.estado">
+        <option value="">Estado</option>
+        <option value="exitente">Existente</option>
+        <option value="agotado">Agotado</option>
+      </select>
+    </div>
+  
+
+  <div class="field">
+    <label>Descripcion</label>
+    <textarea rows="2" [(ngModel)]="this.input.descripcion"></textarea>
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+    </div>
+    <div class="field">
+      <div class="two fields" *ngIf="!this.statusEdit; else elseTemplate">
+        <div class="field positive ui button" style="margin-right: 1px;" (click)="onGuardar()">
+          Guardar
+        </div>
+        <div class="field negative ui button" style="margin-left: 1px;" (click)="onDescartar()">
+          Descartar
+        </div>
+      </div>
+      <ng-template #elseTemplate>
+        <div class="two fields">
+          <div class="field positive ui button" style="margin-right: 1px;" (click)="onEditar()">
+            Editar
+          </div>
+          <div class="field negative ui button" style="margin-left: 1px;" (click)="onEliminar()">
+            Eliminar
+          </div>
+        </div>
+
+      </ng-template>
+    </div>
+  </div>
+
+</div>

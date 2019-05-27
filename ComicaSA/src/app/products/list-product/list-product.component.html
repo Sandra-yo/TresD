@@ -1,0 +1,25 @@
+<div class="ui link cards f-justify-space-around">
+  <div class="card" *ngFor="let product of this.productList" (click)="onSelectCard(product)">
+    <div class="image">
+      <img [src]="product.imagen" style="height: 200px;">
+    </div>
+    <div class="content">
+      <div class="header">{{ product.nombre }}</div>
+      <div class="meta">
+        <a>Provedor: </a> {{ product.proveedorId }}
+      </div>
+      <div class="description">
+        
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+        Creado el {{ this.formatDate(product.creado) }}
+      </span>
+      <span>
+        <i class="bell icon"></i>
+      </span>
+    </div>
+  </div>
+
+</div>
