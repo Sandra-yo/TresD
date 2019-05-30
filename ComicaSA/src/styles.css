@@ -5,10 +5,14 @@
   margin: 0px;
 }
 
-body {
+/* body {
   background-image: url('./assets/images/wall_4.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+} */
+
+body{
+  background-color: #c34960;
 }
 
 .flex {
@@ -35,8 +39,7 @@ body {
   float: right;
   width: 80%;
   margin: 15px;
-
-    background-color: white;
-    border-radius: 5px;
-    padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
 }

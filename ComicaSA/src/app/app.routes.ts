@@ -1,3 +1,4 @@
+import { AboutComponent } from './about/about.component';
 import { RecordComponent } from './record/record.component';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -11,7 +12,6 @@ import { UserComponent } from './users/user/user.component';
 import { MyAccountComponent } from './account/my-account/my-account.component';
 import { MyCartComponent } from './shopping/my-cart/my-cart.component';
 
-
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent},
@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'account', component: MyAccountComponent},
   { path: 'mycart', component: MyCartComponent},
   { path: 'record', component: RecordComponent},
+  { path: 'about', component: AboutComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'login' },
 ];
 

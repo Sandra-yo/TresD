@@ -1,0 +1,26 @@
+#logo {
+    font-family: 'AuthenticHilton',Brush Script MT,cursive;
+    color: #c34960;
+    text-align: center;
+}
+#slogan{
+    font-family: 'AuthenticHilton',Brush Script MT,cursive;
+    color: #c34960;
+    text-align: center;
+    font-size: 25px;
+}
+#inicio:hover  #logo,#inicio:hover  #slogan{
+    font-family: 'AuthenticHilton',Brush Script MT,cursive;
+    color: white;
+    text-align: center;
+}
+#inicio:hover{
+    background-color: #c34960;
+}
+a.item:hover{
+    background-color: #c34960 !important;
+    color: white !important;
+}
+.col-md-2{
+    padding-left: 0px;
+}

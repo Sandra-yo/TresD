@@ -1,4 +1,4 @@
-.body {
+/* .body {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -17,4 +17,102 @@
 
 .txt-centered {
   text-align: center;
+} */
+
+
+.container-fluid{
+  margin-top: 30px;
 }
+
+.contenedorInicio{
+  padding: 3em;
+  width: 30em;
+  margin: auto;
+  background-color: rgba(217,217,217,0.7);
+}
+
+.contenedorFormulario{
+  padding: 1em;
+  width: 38em;
+  margin: auto;
+  background-color: rgba(217,217,217,0.7);
+}
+.contenedorInicio h1, .contenedorFormulario h1{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  color: #E8707B;
+  margin: 0px;
+}
+.contenedorInicio label, input{
+  font-family: 'Merienda', cursive;
+}
+#contenedorLogo h1{
+  font-family: 'AuthenticHilton',Brush Script MT,cursive;
+  color: white;
+}
+
+h2{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  color: #c34960;
+}
+
+
+h3{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  color: black;
+}
+
+.btn-pink{
+  background-color: #E8707B;
+  color: white;
+}
+
+.btn-pink:hover{
+  background-color: #BF045B;
+  color: white;
+}
+
+div{
+  margin: 1.5em 0em;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #E8707B;
+  width: 100%;
+  padding: 5; 
+}
+
+.btn-barra:hover{
+  background-color: #E8707B;
+  color: white;
+  font-family: 'Courgette', cursive;
+}
+
+table tr:hover{
+  background-color: #E8707B;
+  color: white;
+  font-family: 'Courgette', cursive;
+}
+
+.tabla{
+  font-family: 'Courgette', cursive;
+}
+
+.btn-barra{
+  font-family: 'Courgette', cursive;
+}
+
+.centrado{
+  margin: auto;
+  max-width: 300px;
+}
+
+.barra{
+  background-color: #E8707B;
+}
+

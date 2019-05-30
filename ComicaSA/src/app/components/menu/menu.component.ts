@@ -77,6 +77,8 @@ export class MenuComponent implements OnInit, OnChanges {
       case 'record':
         this.router.navigate(['record']);
         break;
+      case 'about':
+        this.router.navigate(['about']);
     }
   }
 

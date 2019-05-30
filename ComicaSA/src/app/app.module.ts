@@ -38,6 +38,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { MyCartComponent } from './shopping/my-cart/my-cart.component';
 import { PurchasedComponent } from './shopping/purchased/purchased.component';
 import { RecordComponent } from './record/record.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { RecordComponent } from './record/record.component';
     MyCartComponent,
     PurchasedComponent,
     RecordComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
     active: false,
     type: false,
   };
+
+  onlyAdministrador = false;
   productList: ProductsScheme[] = [];
   product: ProductsScheme = {
     imagen: './../../../assets/images/image.png',
@@ -40,6 +42,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const user = this.localStorage.getUser();
     this.userInfo = this.localStorage.getUser();
 
     this.db.getData(VariablesEnum.PRODUCTOS).subscribe((res) => {
@@ -48,7 +51,7 @@ export class DashboardComponent implements OnInit {
       this.productList.forEach((producto) => {
         producto.comprar = 1;
       });
-
+      this.onlyAdministrador = user.tipo === 'administrador' ? true : false;
       const min = 0;
       const max = this.productList.length - 1;
       setInterval(() => {

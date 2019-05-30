@@ -1,5 +1,9 @@
-<div style="position: fixed; height: 100%;">
+<div class="col-md-2" style="position: fixed; height: 100%;">
   <div class="ui vertical menu" style="height: 100%;">
+    <div id="inicio" class="item" (click)="onSelected('dashboard')">
+        <h1 id="logo" class="text-center">3Delicias</h1>
+        <h1 id="slogan" class="text-center">Endulzando tu vida</h1>
+    </div>
     <div class="item">
       <img class="ui medium circular image" [src]="this.input.imagen" style="height: 150px;">
     </div>
@@ -7,7 +11,7 @@
       {{ this.input.nombre }}
     </div>
 
-    <a class="item" (click)="onSelected('dashboard')">Inicio</a>
+    <!-- <a class="item" >Inicio</a> -->
 
     <!--     <div class="item">
       <div class="header">Productos</div>
@@ -20,7 +24,7 @@
       <div class="header">Carrito</div>
       <div class="menu">
         <a class="item" (click)="onSelected('cart')" >Agregados</a>
-        <a class="item">Comprados</a>
+        <!-- <a class="item">Comprados</a> -->
       </div>
     </div>
     <div class="item" *ngIf="onlyAdministrador">
@@ -36,7 +40,7 @@
       <div class="header">Mi cuenta</div>
       <div class="menu">
         <a class="item" (click)="onSelected('account')">Editar cuenta</a>
-        <a class="item">Acerca de...</a>
+        <a class="item" (click)="onSelected('about')">Acerca de...</a>
         <a class="item" (click)="onLogout()">Logout</a>
       </div>
     </div>

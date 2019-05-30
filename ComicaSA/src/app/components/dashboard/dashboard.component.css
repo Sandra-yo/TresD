@@ -7,6 +7,23 @@
 }
  */
 
+ /* body{
+    background-color: #c34960;
+ } */
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #E8707B;
+    width: 100%;
+    padding: 5; 
+  }
+
+  .container-fluid{
+      padding-left: 0px;
+  }
+
  .align-vertical {
     display: flex;
     align-items: center;

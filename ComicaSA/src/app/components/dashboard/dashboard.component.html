@@ -1,78 +1,87 @@
-<div>
-  <app-menu></app-menu>
-  <div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
-    <i class="close icon"></i>
-    <div class="header">
-      {{ message.title }}
-    </div>
-    <p> {{ message.subtitle }} </p>
+<app-menu></app-menu>
+<div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
+  <i class="close icon"></i>
+  <div class="header">
+    {{ message.title }}
   </div>
+  <p> {{ message.subtitle }} </p>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="image">
+        <img class="img-fluid" href="http://escueladechefs.com/wp-content/uploads/2016/06/panaderia1.png">
+      </div>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+
   <div class="align-rigth">
-    <div class="ui divided items">
-      <div class="item padding-50" style="padding: 50px;">
-        <div class="image" style="width: 70%;">
-          <img [src]="product.imagen" style="height: 380px;">
-        </div>
-        <div class="content margin-top-5" style="margin-top: 5px; display: flex; justify-content: center; flex-direction: column;">
-          <h2 class="header" style="font-size: 20px;">{{ product.nombre }}</h2>
-          <div class="description">
-            <p>{{ product.descripcion }}</p>
+      <div class="ui divided items">
+        <div class="item padding-50" style="padding: 50px;">
+          <div class="image" style="width: 70%;">
+            <img [src]="product.imagen" style="height: 380px;">
           </div>
-          <div class="extra">
-            <div class="ui label">Edicion limitada</div>
+          <div class="content margin-top-5" style="margin-top: 5px; display: flex; justify-content: center; flex-direction: column;">
+            <h2 class="header" style="font-size: 20px;">{{ product.nombre }}</h2>
+            <div class="description">
+              <p>{{ product.descripcion }}</p>
+            </div>
+            <div class="extra">
+              <div class="ui label">Edicion limitada</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <hr style="margin: 15px 5px;">
-
-    <!-- Lista de productos -->
-    <div class="ui link cards f-justify-space-around">
-      <div class="card" *ngFor="let product of this.productList; index as i">
-        <div class="image">
-          <img [src]="product.imagen" style="height: 200px;">
-        </div>
-        <div class="content">
-          <div class="header">{{ product.nombre }}</div>
-          <div class="meta">
-         <!--   <a>Provedor: </a> {{ product.proveedorId }} -->
-            <a>Cantidad: </a> {{ product.cantidad }}
+    
+      <hr style="margin: 15px 5px;">
+    
+      <!-- Lista de productos -->
+      <div class="ui link cards f-justify-space-around">
+        <div class="card" *ngFor="let product of this.productList; index as i">
+          <div class="image">
+            <img [src]="product.imagen" style="height: 200px;">
           </div>
-          <div class="description">
-            Descripcion: {{ product.descripcion }}
+          <div class="content">
+            <div class="header">{{ product.nombre }}</div>
+            <div class="meta">
+            <!--   <a>Provedor: </a> {{ product.proveedorId }} -->
+              <a>Cantidad: </a> {{ product.cantidad }}
+            </div>
+            <div class="description">
+              Descripcion: {{ product.descripcion }}
+            </div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">
+              Creado el {{ this.formatDate(product.creado) }}
+            </span>
+            <span>
+              <i class="dollar sign icon"></i>
+              {{ product.costo }}
+            </span>
+          </div>
+          <div class="extra content" style="display: flex" *ngIf="!onlyAdministrador">
+    
+            <span style="display: flex;">
+              <div class="align-vertical" (click)="onQuantityProducts(i, 'less')">
+                <img class="less" width="22px" height="22px" src="./../../../assets/icons/menos.png" alt="">
+              </div>
+              <div class="align-vertical">
+                <input type="text" disabled [(ngModel)]="product.comprar" style="border-radius: 5px; width: 22px; height: 22px; text-align: center">
+              </div>
+              <div class="align-vertical" (click)="onQuantityProducts(i, 'more')">
+                <img class="more" width="22px" height="22px" src="./../../../assets/icons/mas.png" alt="">
+              </div>
+            </span>
+            <span (click)="onAddCart(i)" class="ui right floated primary button" style="width: 100%; margin-top: 5px;" *ngIf="!onlyAdministrador">
+              Agregar al carrito
+            </span>
           </div>
         </div>
-        <div class="extra content">
-          <span class="right floated">
-            Creado el {{ this.formatDate(product.creado) }}
-          </span>
-          <span>
-            <i class="dollar sign icon"></i>
-            {{ product.costo }}
-          </span>
-        </div>
-        <div class="extra content" style="display: flex">
-
-          <span style="display: flex;">
-            <div class="align-vertical" (click)="onQuantityProducts(i, 'less')">
-              <img class="less" width="22px" height="22px" src="./../../../assets/icons/menos.png" alt="">
-            </div>
-            <div class="align-vertical">
-              <input type="text" disabled [(ngModel)]="product.comprar" style="border-radius: 5px; width: 22px; height: 22px; text-align: center">
-            </div>
-            <div class="align-vertical" (click)="onQuantityProducts(i, 'more')">
-              <img class="more" width="22px" height="22px" src="./../../../assets/icons/mas.png" alt="">
-            </div>
-          </span>
-          <span (click)="onAddCart(i)" class="ui right floated primary button" style="width: 100%; margin-top: 5px;">
-            Agregar al carrito
-          </span>
-        </div>
+    
       </div>
-
+      <!-- End lista de productos -->
     </div>
-    <!-- End lista de productos -->
-  </div>
-
 </div>
