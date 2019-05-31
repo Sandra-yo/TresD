@@ -62,5 +62,16 @@ export class LoginService {
       });
     });
   }
+  sendEmail(email: string): Observable<Response> {
+    return Observable.create((observer: Observer<Response>) => {
+      this.angularFireAuth.auth.sendPasswordResetEmail(email).then((res: Response) => {
+        observer.next(res);
+        observer.complete();
+      }, (err: any) => {
+        observer.error(err);
+        observer.complete();
+      });
+    });
+  }
 
 }

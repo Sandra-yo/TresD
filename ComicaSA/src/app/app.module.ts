@@ -39,7 +39,9 @@ import { MyCartComponent } from './shopping/my-cart/my-cart.component';
 import { PurchasedComponent } from './shopping/purchased/purchased.component';
 import { RecordComponent } from './record/record.component';
 import { AboutComponent } from './about/about.component';
-
+import { RecuperarContraseniaComponent } from './recuperar-contrasenia/recuperar-contrasenia.component';
+import { HttpModule } from '@angular/http';
+import { CorreoAdminComponent } from './correo-admin/correo-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +67,8 @@ import { AboutComponent } from './about/about.component';
     PurchasedComponent,
     RecordComponent,
     AboutComponent,
+    RecuperarContraseniaComponent,
+    CorreoAdminComponent,
   ],
   imports: [
     BrowserModule,

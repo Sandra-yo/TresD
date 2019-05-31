@@ -63,6 +63,9 @@ export class LoginComponent implements OnInit {
   onRegister() {
     this.router.navigate(['register']);
   }
+  password() {
+    this.router.navigate(['password']);
+  }
 
   onClose() {
     this.showMessage = false;
