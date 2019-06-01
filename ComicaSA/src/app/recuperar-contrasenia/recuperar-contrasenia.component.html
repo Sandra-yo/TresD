@@ -1,5 +1,16 @@
-<div>
-  <p>Ingrese su correo, dentro de poco le enviaremos un correo para recuperar su contraseña.</p>
-  <input type="email" #email>  
-  <button (click)="onChangePassword(email.value)" >Enviar contraseña</button>
+<div class="body">
+  <div class="container-fluid">
+      <div id="recuperarContraseña" class="ui form center-form">
+          <h4 class="">Recuperar contraseña</h4>
+          <hr>
+          <div class="field">
+              <label>Ingrese su correo, dentro de poco le enviaremos un correo para recuperar su contraseña.</label>
+              <div class="field">
+                <input type="email" #email> 
+                <button (click)="onChangePassword(email.value)" class="btn btn-block btn-pink">Enviar contraseña</button>
+                <div class="btn btn-block btn-gray" (click)="goToLogin()">Cancelar</div>
+              </div>
+            </div>
+        </div>
+  </div>
 </div>

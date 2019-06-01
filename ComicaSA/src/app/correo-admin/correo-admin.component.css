@@ -1,3 +1,47 @@
 div.contenedor{
     margin: 10px;
 }
+.container-fluid{
+    padding-left: 0px;
+}
+
+.form-componets{
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    margin: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    tap-highlight-color: rgba(255,255,255,0);
+    line-height: 1.21428571em;
+    padding: .67857143em 1em;
+    font-size: 1em;
+    background: #fff;
+    border: 1px solid rgba(34,36,38,.15);
+    color: rgba(0,0,0,.87);
+    border-radius: .28571429rem;
+    -webkit-box-shadow: 0 0 0 0 transparent inset;
+    box-shadow: 0 0 0 0 transparent inset;
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+}
+
+textarea:focus, input:focus{
+    border-color: #c34960;
+    -webkit-box-shadow: 0 0 0 0.1rem #c34960;
+    box-shadow: 0 0 0 0.1rem #c34960;
+}
+
+.field{
+    display: block;
+}
+
+input, textarea{
+    width: 100%;
+}
+
+button{
+    margin-left: 0px !important;
+}
+
+.row{
+    margin: 0px;
+}

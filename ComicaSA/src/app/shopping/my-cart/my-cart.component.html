@@ -1,93 +1,94 @@
-<div class="container-fluid">
-  <div class="row" id="barraMenu">
-    <div class="col-md-2">
-      <app-menu></app-menu>
-    </div>
-    <div class="col-md-10">
-        <div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
-            <i class="close icon"></i>
-            <div class="header">
-              {{ message.title }}
+<div class="body">
+  <div class="container-fluid">
+    <div class="row" id="barraMenu">
+      <div class="col-md-2">
+        <app-menu></app-menu>
+      </div>
+      <div class="col-md-10">
+          <div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
+              <i class="close icon"></i>
+              <div class="header">
+                {{ message.title }}
+              </div>
+              <p> {{ message.subtitle }} </p>
             </div>
-            <p> {{ message.subtitle }} </p>
-          </div>
-      
-        <div class="align-rigth">
-          <h2 class="ui header">Agregados al carrito</h2>
-          <table class="table" style="width: 100%; border: 1px solid aliceblue; padding: 5px;">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>No. comprados</th>
-                <th>Estado</th>
-                <th>Total</th>
-                <th>Fecha</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let compra of purchased; index as i"  >
-                <td ngi>
-                  <h4 class="ui image header">
-                    <img [src]="compra.productImage" class="ui mini rounded image">
-                    <div class="content">
-                      {{ compra.productName }}
-                      <div class="sub header"> {{ compra.productId }}
+        
+          <div class="align-rigth">
+            <h2 class="ui header">Agregados al carrito</h2>
+            <table class="table" style="width: 100%; border: 1px solid aliceblue; padding: 5px;">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>No. comprados</th>
+                  <th>Estado</th>
+                  <th>Total</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let compra of purchased; index as i"  >
+                  <td ngi>
+                    <h4 class="ui image header">
+                      <img [src]="compra.productImage" class="ui mini rounded image">
+                      <div class="content">
+                        {{ compra.productName }}
+                        <div class="sub header"> {{ compra.productId }}
+                        </div>
                       </div>
+                    </h4>
+                  </td>
+                  <td>
+                    {{ compra.cantidad }}
+                  </td>
+                  <td>
+                    {{ compra.estado}}
+                  </td>
+                  <td>
+                    {{ compra.total }}
+                  </td>
+                  <td>
+                    {{ formatDate(compra.creado)}}
+                  </td>
+                  <td >
+                    <div   (click)="onDelete(compra.id)" id="btn" style="    margin: 5px;
+                    text-align: center;
+                    background-color: rgb(112, 34, 34);
+                    border-radius: 8px;
+                    font-size: 15px;
+                    color: white;
+                    width: 95%;
+                    height: 45px;
+                    line-height: 45px;">
+                      Eliminar
                     </div>
-                  </h4>
-                </td>
-                <td>
-                  {{ compra.cantidad }}
-                </td>
-                <td>
-                  {{ compra.estado}}
-                </td>
-                <td>
-                  {{ compra.total }}
-                </td>
-                <td>
-                  {{ formatDate(compra.creado)}}
-                </td>
-                <td >
-                  <div   (click)="onDelete(compra.id)" id="btn" style="    margin: 5px;
-                  text-align: center;
-                  background-color: rgb(112, 34, 34);
-                  border-radius: 8px;
-                  font-size: 15px;
-                  color: white;
-                  width: 95%;
-                  height: 45px;
-                  line-height: 45px;">
-                    Eliminar
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td >
-                  <div  (click)="onBuy(purchased)" id="btn" style="    margin: 5px;
-                  text-align: center;
-                  background-color: #1e88e5;
-                  border-radius: 8px;
-                  font-size: 15px;
-                  color: white;
-                  width: 95%;
-                  height: 45px;
-                  line-height: 45px;">
-                    Comprar
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td >
+                    <div  (click)="onBuy(purchased)" id="btn" style="    margin: 5px;
+                    text-align: center;
+                    background-color: #1e88e5;
+                    border-radius: 8px;
+                    font-size: 15px;
+                    color: white;
+                    width: 95%;
+                    height: 45px;
+                    line-height: 45px;">
+                      Comprar
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
     </div>
-  </div>
+  </div>  
 </div>
-  
   
   
