@@ -1,5 +1,4 @@
-<div class="body">
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row" id="barraMenu">
       <div class="col-md-2">
         <app-menu></app-menu>
@@ -27,7 +26,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let compra of purchased; index as i"  >
-                  <td ngi>
+                  <td *ngIf="compra.estado!=='comprado'" >
                     <h4 class="ui image header">
                       <img [src]="compra.productImage" class="ui mini rounded image">
                       <div class="content">
@@ -37,19 +36,19 @@
                       </div>
                     </h4>
                   </td>
-                  <td>
+                  <td *ngIf="compra.estado!=='comprado'">
                     {{ compra.cantidad }}
                   </td>
-                  <td>
+                  <td *ngIf="compra.estado!=='comprado'">
                     {{ compra.estado}}
                   </td>
-                  <td>
+                  <td *ngIf="compra.estado!=='comprado'">
                     {{ compra.total }}
                   </td>
-                  <td>
+                  <td *ngIf="compra.estado!=='comprado'">
                     {{ formatDate(compra.creado)}}
                   </td>
-                  <td >
+                  <td *ngIf="compra.estado!=='comprado'">
                     <div   (click)="onDelete(compra.id)" id="btn" style="    margin: 5px;
                     text-align: center;
                     background-color: rgb(112, 34, 34);
@@ -81,59 +80,14 @@
                     line-height: 45px;">
                       Comprar
                     </div>
-                  </h4>
-                </td>
-                <td *ngIf="compra.estado!=='comprado'">
-                  {{ compra.cantidad }}
-                </td>
-                <td *ngIf="compra.estado!=='comprado'">
-                  {{ compra.estado}}
-                </td>
-                <td *ngIf="compra.estado!=='comprado'">
-                  {{ compra.total }}
-                </td>
-                <td *ngIf="compra.estado!=='comprado'">
-                  {{ formatDate(compra.creado)}}
-                </td>
-                <td *ngIf="compra.estado!=='comprado'">
-                  <div   (click)="onDelete(compra.id)" id="btn" style="    margin: 5px;
-                  text-align: center;
-                  background-color: rgb(112, 34, 34);
-                  border-radius: 8px;
-                  font-size: 15px;
-                  color: white;
-                  width: 95%;
-                  height: 45px;
-                  line-height: 45px;">
-                    Eliminar
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td >
-                  <div  (click)="onBuy(purchased)" id="btn" style="    margin: 5px;
-                  text-align: center;
-                  background-color: #1e88e5;
-                  border-radius: 8px;
-                  font-size: 15px;
-                  color: white;
-                  width: 95%;
-                  height: 45px;
-                  line-height: 45px;">
-                    Comprar
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
     </div>
-  </div>  
-</div>
-  
-  
+  </div>
+    
+    
+    
