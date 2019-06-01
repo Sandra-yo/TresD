@@ -21,8 +21,9 @@
         <a class="item">Listar</a>
       </div>
     </div> -->
-    <div class="item" *ngIf="!onlyAdministrador">
-      <div class="header">Carrito</div>
+    
+    <div id="barraCarrito" class="item" *ngIf="!onlyAdministrador">
+      <div class="header center">Carrito</div>
       <div class="menu">
         <a class="item itemMenu" (click)="onSelected('cart')" >Agregados</a>
         <!-- <a class="item">Comprados</a> -->

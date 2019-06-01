@@ -140,16 +140,18 @@ hr {
     height: auto !important;
   }
 
-  #nombreUsuario, #fotoUsuario{
+  #nombreUsuario, #fotoUsuario, #slogan, #barraAdmin div.header, #barraCuenta div.header, #barraCarrito div.header{
     display: none;
   }
 
 	.ui.vertical.menu .item{
 	  display: inline-block;
-	}
-
+  }
+  
 	.inicio, #barraAdmin, #barraCuenta{
-		display: block;
+    display: inline-block;
+    padding: 10px;
+    
 	}
 
 	.center{
