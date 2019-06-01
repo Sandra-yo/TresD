@@ -14,6 +14,7 @@ import { UserScheme } from './../schemes/users/user.scheme';
 export class RecordComponent implements OnInit {
 
   purchased: PurchaseDetailScheme[] = [];
+  users: UserScheme[] = [];
   user: any;
   infoUser: UserScheme;
   message = {
@@ -31,6 +32,14 @@ export class RecordComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.localStorage.getUser();
+
+    this.dbUser.getDataWhere(
+      VariablesEnum.USER_INFO,
+      { fieldPath: 'tipo', operador: '==', fieldPathFirebase: 'usuario' }
+    ).subscribe((res) => {
+      this.users = res.serverResponse;
+    }, (err) => console.log(err));
+
     this.dbUser.getDataWhere(
       VariablesEnum.USER_INFO,
       { fieldPath: 'id', operador: '==', fieldPathFirebase: this.user.userId }
@@ -40,15 +49,21 @@ export class RecordComponent implements OnInit {
 
     this.db.getDataWhere(
       VariablesEnum.PURCHASED,
-      { fieldPath: 'userId', operador: '==', fieldPathFirebase: this.user.userId }
+      { fieldPath: 'estado', operador: '==', fieldPathFirebase: 'comprado' }
     ).subscribe((res) => {
       this.purchased = res.serverResponse;
     }, (err) => console.log(err));
   }
 
+
+
   formatDate(fecha: string) {
     const newFecha = new Date(fecha);
     return newFecha.getDate() + '/' + newFecha.getMonth() + '/' + newFecha.getFullYear();
+  }
+
+  getUser(ident: string) {
+    return  this.users.find((p) => p.id === ident).nombre;
   }
 
   onBuy() {

@@ -93,7 +93,7 @@ export class DashboardComponent implements OnInit {
       { fieldPath: 'userId', operador: '==', fieldPathFirebase: this.userInfo.userId }
     ).subscribe((res) => {
       this.purchasedProducts = res.serverResponse;
-      const find: PurchaseDetailScheme = this.purchasedProducts.find((p) => p.productId === product.id);
+      const find: PurchaseDetailScheme = this.purchasedProducts.find((p) => p.productId === product.id && p.estado !== 'comprado');
       if (find !== undefined) { // encontro solo incrementar
         find.cantidad += product.comprar;
         find.total += product.comprar * product.costo;
@@ -129,7 +129,7 @@ export class DashboardComponent implements OnInit {
         });
       }// END ELSE
     }, (err) => {
-      console.log(err);
+      console.log(this.userInfo);
     });
 
 

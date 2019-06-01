@@ -83,7 +83,12 @@
     <div class="three fields">
       <div class="field">
         <label>Tipo</label>
-        <input type="text" placeholder="Tipo" [(ngModel)]="this.input.tarjeta.tipo">
+        <select class="ui fluid search dropdown" placeholder="Tipo" [(ngModel)]="this.input.tarjeta.tipo">
+            
+            <option value="Debito">Debito</option>
+            <option value="Credito">Credito</option>
+          </select>
+        
       </div>
       <div class="field">
         <label>Numero</label>
@@ -95,9 +100,9 @@
       </div>
     </div>
     <div class="field">
-      <label>Expiración</label>
       <div class="two fields">
         <div class="field">
+            <label>Expiración</label>
           <select class="ui fluid search dropdown" [(ngModel)]="this.input.tarjeta.expiracion.mes">
             <option value="">Mes</option>
             <option value="1">Enero</option>
@@ -115,7 +120,8 @@
           </select>
         </div>
         <div class="field">
-          <input type="number" placeholder="Año" [(ngModel)]="this.input.tarjeta.expiracion.ano">
+          <label>Año de expiración</label>
+          <input type="text" placeholder="Año" [(ngModel)]="this.input.tarjeta.expiracion.ano">
         </div>
       </div>
     </div>

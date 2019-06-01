@@ -50,55 +50,33 @@ export class MyCartComponent implements OnInit {
 
   formatDate(fecha: string) {
     const newFecha = new Date(fecha);
-    return newFecha.getDate() + '/' + newFecha.getMonth() + '/' + newFecha.getFullYear();
+    return newFecha.getDate() + '/' + ((newFecha.getMonth()) + 1) + '/' + newFecha.getFullYear();
   }
 
   onBuy(compras: string[]) {
-   /* const cantidad = this.infoUser.tarjeta.cantidad;
-    let total = 0;
-    this.purchased.forEach((product) => {
-      total += product.total;
+    this.purchased.forEach(element => {
+      if (element.estado === 'carrito' ) {
+        element.estado = 'comprado';
+        this.db.update(VariablesEnum.PURCHASED, element.id, element).subscribe((r) => {
+          console.log(r.serverResponse);
+          this.message = {
+            active: true,
+            title: 'Su orden ha sido enviada',
+            subtitle: ' ',
+            type: true,
+          };
+          setTimeout(() => {
+            this.message.active = false;
+          }, 3000);
+        }, e => {
+          console.log(e);
+        });
+      }
     });
 
-    if (total < cantidad) { // puedo comprarlo*/
 
+      this.router.navigate(['dashboard']);
 
-   /* } else { // no puedo comprar
-      this.message = {
-        title: 'No tiene suficientes fondos para comprar',
-        subtitle: 'Su saldo es de: ' + cantidad + ' y la compra es de: ' + total,
-        active: true,
-        type: false,
-      };
-      setTimeout(() => {
-        this.message.active = false;
-      }, 3000);
-    }*/
-    const find: PurchaseDetailScheme = this.purchased.find((p) => p.estado === 'carrito');
-
-    if ( find !== undefined) {
-      find.estado = 'comprado';
-      this.db.update(VariablesEnum.PURCHASED, find.id, find).subscribe((r) => {
-        console.log(r.serverResponse);
-        this.message = {
-          active: true,
-          title: 'Su orden ha sido enviada',
-          subtitle: ' ',
-          type: true,
-        };
-        setTimeout(() => {
-          this.message.active = false;
-        }, 3000);
-      }, e => {
-        console.log(e);
-      });
-
-      this.purchased.forEach(compra => {
-        this.onDelete(compra.id);
-      });
-
-     // this.router.navigate(['dashboard']);
-    }
   }
 
   onDelete(id: string) {
