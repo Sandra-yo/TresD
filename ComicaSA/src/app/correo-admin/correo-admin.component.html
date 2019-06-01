@@ -1,0 +1,21 @@
+
+    <app-menu></app-menu>
+    <div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
+        <i class="close icon"></i>
+        <div class="header">
+          {{ message.title }}
+        </div>
+        <p> {{ message.subtitle }} </p>
+      </div>
+    
+    <div class="align-rigth">
+        <div> 
+            <div class="contenedor" >
+              <label for="asunto">Asunto</label><br>
+              <input type="text"><br><br>
+              <textarea rows="10" cols="90"></textarea><br><br>
+              <button (click)="redirigir()" >Enviar</button>
+            </div>
+          </div>
+          <div>
+     </div>

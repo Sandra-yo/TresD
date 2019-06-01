@@ -40,9 +40,10 @@
     <div id="barraCuenta" class="item">
       <div class="header center">Mi cuenta</div>
       <div class="menu">
-        <a class="item itemMenu" (click)="onSelected('account')">Editar cuenta</a>
-        <a class="item itemMenu" (click)="onSelected('about')">Acerca de...</a>
-        <a class="item itemMenu" (click)="onLogout()">Logout</a>
+        <a class="item" (click)="onSelected('email')" *ngIf="!onlyAdministrador">Enviar correo al Administrador</a>
+        <a class="item" (click)="onSelected('account')">Editar cuenta</a>
+        <a class="item" (click)="onSelected('about')">Acerca de...</a>
+        <a class="item" (click)="onLogout()">Logout</a>
       </div>
     </div>
   </div>

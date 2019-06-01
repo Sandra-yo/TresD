@@ -1,3 +1,5 @@
+import { CorreoAdminComponent } from './correo-admin/correo-admin.component';
+import { RecuperarContraseniaComponent } from './recuperar-contrasenia/recuperar-contrasenia.component';
 import { AboutComponent } from './about/about.component';
 import { RecordComponent } from './record/record.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,6 +14,7 @@ import { UserComponent } from './users/user/user.component';
 import { MyAccountComponent } from './account/my-account/my-account.component';
 import { MyCartComponent } from './shopping/my-cart/my-cart.component';
 
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent},
@@ -24,6 +27,8 @@ const routes: Routes = [
   { path: 'mycart', component: MyCartComponent},
   { path: 'record', component: RecordComponent},
   { path: 'about', component: AboutComponent},
+  { path: 'email', component: CorreoAdminComponent },
+  { path: 'password', component: RecuperarContraseniaComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'login' },
 ];
 
