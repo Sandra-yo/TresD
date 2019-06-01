@@ -6,3 +6,9 @@ p{
 div{
     text-align: center;
 }
+.body{
+    background-image: url('/../../../assets/images/login05.jpg');
+    height: 100%;
+    background-size: cover;
+    background-position-y: center;
+}

@@ -1,21 +1,42 @@
-
-    <app-menu></app-menu>
-    <div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
-        <i class="close icon"></i>
-        <div class="header">
-          {{ message.title }}
-        </div>
-        <p> {{ message.subtitle }} </p>
+<div class="body">
+  <div class="container-fluid">
+    <div class="row" id="barraMenu">
+      <div class="col-md-2">
+        <app-menu></app-menu>
       </div>
-    
-    <div class="align-rigth">
-        <div> 
-            <div class="contenedor" >
-              <label for="asunto">Asunto</label><br>
-              <input type="text"><br><br>
-              <textarea rows="10" cols="90"></textarea><br><br>
-              <button (click)="redirigir()" >Enviar</button>
+      <div class="col-md-10">
+          <div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
+              <i class="close icon"></i>
+              <div class="header">
+                {{ message.title }}
+              </div>
+              <p> {{ message.subtitle }} </p>
             </div>
-          </div>
-          <div>
-     </div>
+          
+          <div class="align-rigth">
+          <h3 class="textoCentrado">¿Algún pedido personalizado?</h3>
+          <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="field">
+                        <label for="asunto">Asunto</label><br>
+                        <input type="text" placeholder="Asunto" class="form-componets"><br><br>
+                      </div>
+                      <div class="field">
+                        <label for="telefo">Telefono de contacto</label><br>
+                        <input type="number" placeholder="Teléfono" class="form-componets"><br><br>
+                      </div>
+                      <div class="field">
+                        <textarea class="form-componets" rows="10" cols="90"></textarea><br>
+                        <button class="btn btn-block btn-pink" (click)="redirigir()" >Enviar</button>
+                      </div>
+                </div>
+                <div id="mapa" class="col-md-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.296451808951!2d-101.65495688547507!3d21.100744085959473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbe49281a67ad%3A0xc37127d2ee192fb8!2sCalle+M%C3%B3naco+233%2C+Azteca%2C+37520+Le%C3%B3n%2C+Gto.!5e0!3m2!1ses-419!2smx!4v1559362360938!5m2!1ses-419!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>  

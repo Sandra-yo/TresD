@@ -37,8 +37,6 @@ export class CorreoAdminComponent implements OnInit {
   }
 
 
-
-
 redirigir() {
 
   this.message = {

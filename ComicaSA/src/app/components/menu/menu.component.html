@@ -21,10 +21,11 @@
         <a class="item">Listar</a>
       </div>
     </div> -->
-    <div class="item" *ngIf="!onlyAdministrador">
-      <div class="header">Carrito</div>
+    
+    <div id="barraCarrito" class="item" *ngIf="!onlyAdministrador">
+      <div class="header center">Carrito</div>
       <div class="menu">
-        <a class="item" (click)="onSelected('cart')" >Agregados</a>
+        <a class="item itemMenu" (click)="onSelected('cart')" >Agregados</a>
         <!-- <a class="item">Comprados</a> -->
       </div>
     </div>
@@ -40,10 +41,9 @@
     <div id="barraCuenta" class="item">
       <div class="header center">Mi cuenta</div>
       <div class="menu">
-        <a class="item" (click)="onSelected('email')" *ngIf="!onlyAdministrador">Enviar correo al Administrador</a>
-        <a class="item" (click)="onSelected('account')">Editar cuenta</a>
-        <a class="item" (click)="onSelected('about')">Acerca de...</a>
-        <a class="item" (click)="onLogout()">Logout</a>
+        <a class="item itemMenu" (click)="onSelected('account')">Editar cuenta</a>
+        <a class="item itemMenu" (click)="onSelected('email')" *ngIf="!onlyAdministrador">¡Contactanos!</a>
+        <a class="item itemMenu" (click)="onLogout()">Logout</a>
       </div>
     </div>
   </div>
