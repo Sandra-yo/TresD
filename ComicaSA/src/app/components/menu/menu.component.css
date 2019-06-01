@@ -2,12 +2,18 @@
     font-family: 'AuthenticHilton',Brush Script MT,cursive;
     color: #c34960;
     text-align: center;
+    font-size: 4em;
 }
 #slogan{
     font-family: 'AuthenticHilton',Brush Script MT,cursive;
     color: #c34960;
     text-align: center;
-    font-size: 25px;
+    font-size: 1.9em;
+}
+
+#inicio{
+    width: 100%;
+
 }
 #inicio:hover  #logo,#inicio:hover  #slogan{
     font-family: 'AuthenticHilton',Brush Script MT,cursive;
@@ -22,5 +28,18 @@ a.item:hover{
     color: white !important;
 }
 .col-md-2{
-    padding-left: 0px;
+    /* padding-left: 0px; */
+}
+#nombreUsuario{
+    padding: 5px;
+    background-color: #c34960;
+    color: white;
+    font-size: 16px;
+}
+.header{
+    font-size: 1.3em;
+}
+
+.itemMenu{
+    font-size: 1.1em !important;
 }

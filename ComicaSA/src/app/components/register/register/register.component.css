@@ -2,17 +2,51 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('/../../../assets/images/wall_4.jpg');
+  background-image: url('/../../../assets/images/registro.jpg');
   background-size: cover;
-  overflow-y: hidden;
+  background-position-y: center;
+  overflow: hidden;
 }
 
 .center-form {
-  width: 70%;
-  margin: 15px auto;
-  overflow-y: scroll;
-  height: 90%;
+  width: 80%;
+  margin: 50px auto;
   overflow-x: hidden;
   position: relative;
-  padding: 5px;
+  padding: 30px;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.ui.header{
+  font-family: 'Merienda', cursive;
+}
+
+@media only screen and (max-width: 758px) {
+  .body{
+    background-image: url('/../../../assets/images/fondoRegistro02.png');
+    overflow-y: scroll;
+  }
+  
+  #subirFoto{
+    display: block !important;
+    margin: 0px;
+    width: 100%;
+  }
+
+  #subirFoto img, #subirFoto div{
+      width: 100% !important;
+      margin: 0px !important;
+  }
+
+  .item{
+      display: block;
+  }
+
+  .content{
+      width: 100% !important;
+  }
+
+  .ui.form .field>label{
+      margin-top: 10px;
+  }
 }

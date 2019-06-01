@@ -1,12 +1,23 @@
 <div class="body">
+    <div id="errorInicio" class="alert alert-danger" *ngIf="showMessage">
+      <i class="close icon" (click)="onClose()"></i>
+      <div id="message" class="header">
+        No se pudo iniciar sesión
+      </div>
+      <p> Usuario y/o contraseña inválidos
+      </p>
+    </div>
+
   <div class="ui form center-form">
-    <h4 class="ui dividing header">Registro</h4>
+    <h4 class="">Registro</h4>
+    <hr>
+    
     <!-- Datos personales -->
 
 
-    <div class="item" style="display: flex;">
-      <div class="ui image" style="    margin: 10px; width: 20%;">
-        <img (click)="onFileSelected()" title="Subir imagen" [src]="this.input.imagen" width="150px" height="150px">
+    <div id="subirFoto" class="item" style="display: flex;">
+      <div class="ui image" style="margin: 10px; width: 20%;">
+        <img id="fotoRegistro" (click)="onFileSelected()" title="Subir imagen" [src]="this.input.imagen" width="150px" height="150px">
       </div>
       <div class="content" style="width: 80%;">
 
@@ -14,7 +25,7 @@
           <label>Nombre completo</label>
           <div class="two fields">
             <div class="field">
-              <input type="text" placeholder="Nombre" [(ngModel)]="this.input.nombre">
+              <input type="text" placeholder="Nombre" [(ngModel)]="this.input.nombre" class="form-componets">
             </div>
             <div class="field">
               <input type="text" placeholder="Apellidos" [(ngModel)]="this.input.apellidos">
@@ -40,7 +51,8 @@
     </div>
 
     <!-- Direccion -->
-    <h4 class="ui dividing header">Dirección</h4>
+    <h4>Dirección</h4>
+    <hr>
     <div class="fields">
       <div class="seven wide field">
         <label>Colonia</label>
@@ -66,7 +78,8 @@
       </div>
     </div>
     <!-- TARJETA DE CREDITO -->
-    <h4 class="ui dividing header">Tarjeta</h4>
+    <h4>Tarjeta</h4>
+    <hr>
     <div class="three fields">
       <div class="field">
         <label>Tipo</label>
@@ -74,11 +87,11 @@
       </div>
       <div class="field">
         <label>Numero</label>
-        <input type="text" placeholder="Numero" [(ngModel)]="this.input.tarjeta.numero">
+        <input type="number" placeholder="Numero" [(ngModel)]="this.input.tarjeta.numero">
       </div>
       <div class="field">
         <label>CVC</label>
-        <input type="text" placeholder="CVC" [(ngModel)]="this.input.tarjeta.cvc">
+        <input type="number" placeholder="CVC" [(ngModel)]="this.input.tarjeta.cvc">
       </div>
     </div>
     <div class="field">
@@ -108,14 +121,12 @@
     </div>
 
     <div class="two fields">
-      <div class="field">
-      </div>
-      <div class="field" style="padding-left: 15px; padding-right: 15px;">
+      <div id="btnsRegistro" class="field">
         <div class="two fields">
-          <div class="field ui primary button" style="margin-right: 1px;" (click)="onGuardar()">
+          <div class="field btn btn-pink" (click)="onGuardar()">
             Guardar
           </div>
-          <div class="field ui button" style="margin-left: 1px;">
+          <div class="field btn btn-gray" (click)="goToLogin()">
             Descartar
           </div>
         </div>

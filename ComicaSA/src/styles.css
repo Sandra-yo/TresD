@@ -1,18 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 * {
   padding: 0px;
   margin: 0px;
+  font-family: 'Merienda', cursive;
 }
 
-/* body {
-  background-image: url('./assets/images/wall_4.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+label, h1, h2, h3, h4, h5, h6{
+  font-family: 'Merienda', cursive;
+}
 
 body{
   background-color: #c34960;
+}
+
+.enlace {
+  cursor: pointer;
+  font-size: 16px;
+  color: #c34960;
+}
+
+.enlace:hover {
+  text-decoration: underline #c34960;
 }
 
 .flex {
@@ -36,10 +46,159 @@ body{
 }
 
 .align-rigth {
-  float: right;
-  width: 80%;
-  margin: 15px;
+  margin: 30px 0px;
+  width: 100%;
   background-color: white;
   border-radius: 5px;
   padding: 15px;
+}
+
+
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: none;
+}
+
+.form-control:focus{
+  border-color: #c34960;
+  -webkit-box-shadow: 0 0 0 0.1rem #c34960;
+  box-shadow: 0 0 0 0.1rem #c34960;
+}
+
+#errorInicio{
+  width: 98%;
+}
+
+.btn-pink{
+  background-color: #E8707B;
+  color: white;
+  font-family: 'Merienda', cursive;
+  margin: 10px !important;
+}
+
+.btn-pink:hover{
+  background-color: #BF045B;
+  color: white;
+}
+
+.btn-gray{
+  background-color: #DCDCDD;
+  color: black;
+  font-family: 'Merienda', cursive;
+  margin: 10px !important;
+}
+
+.btn-gray:hover{
+  background-color: #B6B5B8;
+  color: black;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #E8707B;
+  width: 100%;
+  padding: 5; 
+}
+
+#btnsRegistro{
+  margin: auto;
+}
+
+.textoCentrado{
+  text-align: center;
+}
+
+.ui.form input[type=text]:focus, 
+.ui.form input[type=number]:focus, 
+.ui.form input[type=password]:focus,
+.ui.form input[type=email]:focus, 
+.ui.form textarea:focus,
+.ui.form select:focus, .ui.form select:hover{
+  border-color: #c34960;
+  -webkit-box-shadow: 0 0 0 0.1rem #c34960;
+  box-shadow: 0 0 0 0.1rem #c34960;
+}
+
+@media only screen and (max-width: 950px) {
+  .ui.vertical.menu{
+    width: 100%;
+    height: auto !important;
+  }
+
+  #nombreUsuario, #fotoUsuario{
+    display: none;
+  }
+
+	.ui.vertical.menu .item{
+	  display: inline-block;
+	}
+
+	.inicio, #barraAdmin, #barraCuenta{
+		display: block;
+	}
+
+	.center{
+		text-align: center;
+  }
+  
+  #barraMenu{
+    margin: auto;
+  }
+
+  .menu{
+    text-align: center;
+  }
+  
+  .align-rigth{
+    padding-bottom: 300px;
+  }
+
+  .ui.cards{
+    padding-bottom: 10px;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  #subirFoto{
+      display: block !important;
+      margin: 0px;
+      width: 100%;
+  }
+
+  #subirFoto img, #subirFoto div{
+      width: 100% !important;
+      margin: 0px !important;
+  }
+
+  .item{
+      display: block;
+  }
+
+  .content{
+      width: 100% !important;
+  }
+
+  .ui.form .field>label{
+      margin-top: 10px;
+  }
+}
+
+.row{
+  width: 100%;
+}
+.col-md-2{
+  padding-left: 0px;
+}
+#barraMenu{
+  height: 100%;
+}
+.container-fluid{
+  height: 100%;
+  overflow: hidden;
+}
+.col-md-10{
+  height: 100%;
+  overflow: auto;
 }

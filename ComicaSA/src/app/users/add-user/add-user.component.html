@@ -1,14 +1,12 @@
 <div class="ui form">
-  <h4 class="ui dividing header">Registro</h4>
+  <h4>Registro</h4>
+  <hr>
   <!-- Datos personales -->
-
-
-  <div class="item" style="display: flex;">
-    <div class="ui image" style="    margin: 10px; width: 20%;">
+  <div id="subirFoto" class="item" style="display: flex;">
+    <div class="ui image" style="margin: 10px; width: 20%;">
       <img (click)="onFileSelected()" title="Subir imagen" [src]="this.input.imagen" width="150px" height="150px">
     </div>
     <div class="content" style="width: 80%;">
-
       <div class="field">
         <label>Nombre completo</label>
         <div class="three fields">
@@ -46,7 +44,8 @@
   </div>
 
   <!-- Direccion -->
-  <h4 class="ui dividing header">Dirección</h4>
+  <h4>Dirección</h4>
+  <hr>
   <div class="fields">
     <div class="seven wide field">
       <label>Colonia</label>
@@ -72,7 +71,8 @@
     </div>
   </div>
   <!-- TARJETA DE CREDITO -->
-  <h4 class="ui dividing header">Tarjeta</h4>
+  <h4>Tarjeta</h4>
+  <hr>
   <div class="three fields">
     <div class="field">
       <label>Tipo</label>
@@ -118,19 +118,19 @@
     </div>
     <div class="field">
       <div class="two fields" *ngIf="!this.statusEdit; else elseTemplate">
-        <div class="field positive ui button" style="margin-right: 1px;" (click)="onGuardar()">
+        <div class="field btn btn-pink" style="margin-right: 1px;" (click)="onGuardar()">
           Guardar
         </div>
-        <div class="field negative ui button" style="margin-left: 1px;" (click)="onDescartar()">
+        <div class="field btn btn-gray" style="margin-left: 1px;" (click)="onDescartar()">
           Descartar
         </div>
       </div>
       <ng-template #elseTemplate>
         <div class="two fields">
-          <div class="field positive ui button" style="margin-right: 1px;" (click)="onEditar()">
+          <div class="field btn btn-pink" style="margin-right: 1px;" (click)="onEditar()">
             Editar
           </div>
-          <div class="field negative ui button" style="margin-left: 1px;" (click)="onEliminar()">
+          <div class="field btn btn-gray" style="margin-left: 1px;" (click)="onEliminar()">
             Eliminar
           </div>
         </div>

@@ -1,65 +1,74 @@
-<div>
-  <app-menu></app-menu>
-  <div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
-      <i class="close icon"></i>
-      <div class="header">
-        {{ message.title }}
-      </div>
-      <p> {{ message.subtitle }} </p>
+<div class="container-fluid">
+  <div class="row" id="barraMenu">
+    <div class="col-md-2">
+      <app-menu></app-menu>
     </div>
-
-  <div class="align-rigth">
-    <h2 class="ui header">Historial</h2>
-    <table class="ui very basic collapsing celled table" style="width: 100%; border: 1px solid aliceblue; padding: 5px;">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>cliente</th>
-          <th>fecha</th>
-          <th>Total</th>
-          <th>Fecha</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let compra of purchased; index as i">
-          <td>
-            <h4 class="ui image header">
-              <img [src]="compra.productImage" class="ui mini rounded image">
-              <div class="content">
-                {{ compra.productName }}
-                <div class="sub header"> {{ compra.productId }}
-                </div>
-              </div>
-            </h4>
-          </td>
-          <td>
-            {{ compra.cantidad }}
-          </td>
-          <td>
-            {{ compra.estado}}
-          </td>
-          <td>
-            {{ compra.total }}
-          </td>
-          <td>
-            {{ formatDate(compra.creado)}}
-          </td>
-          <td >
-            <div   (click)="onDelete(compra.id)" id="btn" style="    margin: 5px;
-            text-align: center;
-            background-color: rgb(112, 34, 34);
-            border-radius: 8px;
-            font-size: 15px;
-            color: white;
-            width: 95%;
-            height: 45px;
-            line-height: 45px;">
-              Eliminar
+    <div class="col-md-10">
+        <div class="ui positive message margin-150-auto" *ngIf="message.active" [ngClass]="{'positive': message.type, 'negative': !message.type}">
+            <i class="close icon"></i>
+            <div class="header">
+              {{ message.title }}
             </div>
-          </td>
-        </tr>
-        <tr>
-        </tr>
-      </tbody>
-    </table>
+            <p> {{ message.subtitle }} </p>
+          </div>
+        
+          <div class="align-rigth">
+            <h2 class="textoCentrado">Historial</h2>
+            <table class="table" style="width: 100%; border: 1px solid aliceblue; padding: 5px;">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>cliente</th>
+                  <th>fecha</th>
+                  <th>Total</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let compra of purchased; index as i">
+                  <td>
+                    <h4 class="ui image header">
+                      <img [src]="compra.productImage" class="ui mini rounded image">
+                      <div class="content">
+                        {{ compra.productName }}
+                        <div class="sub header"> {{ compra.productId }}
+                        </div>
+                      </div>
+                    </h4>
+                  </td>
+                  <td>
+                    {{ compra.cantidad }}
+                  </td>
+                  <td>
+                    {{ compra.estado}}
+                  </td>
+                  <td>
+                    {{ compra.total }}
+                  </td>
+                  <td>
+                    {{ formatDate(compra.creado)}}
+                  </td>
+                  <td >
+                    <div   (click)="onDelete(compra.id)" id="btn" style="    margin: 5px;
+                    text-align: center;
+                    background-color: rgb(112, 34, 34);
+                    border-radius: 8px;
+                    font-size: 15px;
+                    color: white;
+                    width: 95%;
+                    height: 45px;
+                    line-height: 45px;">
+                      Eliminar
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
   </div>
+</div>
+
+  

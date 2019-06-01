@@ -1,12 +1,10 @@
 <div class="ui form">
 
-  <div class="item" style="display: flex;">
-    <div class="ui image" style="    margin: 10px; width: 20%;">
+  <div id="subirFoto" class="item" style="display: flex;">
+    <div class="ui image" style="margin: 10px; width: 20%;">
       <img (click)="onFileSelected()" title="Subir imagen" [src]="this.input.imagen" width="150px" height="150px">
     </div>
     <div class="content" style="width: 80%;">
-
-
       <div class="two fields">
         <div class="field">
           <label>Nombre</label>
@@ -28,24 +26,22 @@
     </div>
   </div>
 
-  <div class="two fields" style="margin-top: 5px;">
-    <div class="field">
-    </div>
-    <div class="field">
+  <div class="two fields">
+    <div id="btnsRegistro" class="field">
       <div class="two fields" *ngIf="!this.statusEdit; else elseTemplate">
-        <div class="field positive ui button" style="margin-right: 1px;" (click)="onGuardar()">
+        <div class="field btn btn-pink" style="margin-right: 1px;" (click)="onGuardar()">
           Guardar
         </div>
-        <div class="field negative ui button" style="margin-left: 1px;" (click)="onDescartar()">
+        <div class="field btn btn-gray" style="margin-left: 1px;" (click)="onDescartar()">
           Descartar
         </div>
       </div>
       <ng-template #elseTemplate>
         <div class="two fields">
-          <div class="field positive ui button" style="margin-right: 1px;" (click)="onEditar()">
+          <div class="field btn btn-pink" style="margin-right: 1px;" (click)="onEditar()">
             Editar
           </div>
-          <div class="field negative ui button" style="margin-left: 1px;" (click)="onEliminar()">
+          <div class="field btn btn-gray" style="margin-left: 1px;" (click)="onEliminar()">
             Eliminar
           </div>
         </div>

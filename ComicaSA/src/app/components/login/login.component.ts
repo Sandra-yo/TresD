@@ -5,6 +5,7 @@ import { DatabaseGenericService } from '../../services/database-generic/database
 import { UserScheme } from '../../schemes/users/user.scheme';
 import { VariablesEnum } from '../../services/base-datos-variables/variables.enum';
 import { StorageService } from '../../services/local-storage/storage.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.showMessage = false;
+    this.changeBackground();
   }
 
   onLogin() {
@@ -66,5 +68,16 @@ export class LoginComponent implements OnInit {
 
   onClose() {
     this.showMessage = false;
+  }
+
+  changeBackground() {
+    var fondos = ['../../../assets/images/login01.jpg',
+                  '../../../assets/images/login02.jpg',
+                  '../../../assets/images/login03.jpg',
+                  '../../../assets/images/login06.jpg'];
+
+    var index = Math.floor(Math.random() * fondos.length);
+    $('.body').css('background-image', 'url('+fondos[index]+')');
+    $('.body').css('background-position-y', 'center');
   }
 }

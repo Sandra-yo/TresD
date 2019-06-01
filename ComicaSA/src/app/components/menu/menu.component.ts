@@ -5,6 +5,7 @@ import { DatabaseGenericService } from '../../services/database-generic/database
 import { UserScheme } from '../../schemes/users/user.scheme';
 import { VariablesEnum } from '../../services/base-datos-variables/variables.enum';
 import { StorageService } from '../../services/local-storage/storage.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-menu',

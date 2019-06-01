@@ -1,186 +1,193 @@
-<div>
-  <app-menu [newimage]="this.newImagen"></app-menu>
-
-  <div class="align-rigth">
-    <div class="ui styled fluid accordion">
-
-      <div class="title" [ngClass]="{'active': this.activeClass.info}" (click)="onActive('info_user')">
-        <i class="dropdown icon"></i>
-        Información personal
-      </div>
-      <div class="content" [ngClass]="{'active': this.activeClass.info}">
-        <div style="display: flex">
-          <div style="width: 20%; text-align: center;">
-            <img class="ui medium circular image" style="width: 90%; height: 200px;" [src]="this.userInfo.imagen">
-            <div class="enlace" (click)="onFileSelected()">
-              Cambiar image
-            </div>
-          </div>
-          <div class="content" style="width: 80%">
-            <div class="ui form">
-              <div class="field">
-                <label>Nombre completo</label>
-                <div class="two fields">
-                  <div class="field">
-                    <input type="text" placeholder="Nombre" [(ngModel)]="this.userInfo.nombre">
-                  </div>
-                  <div class="field">
-                    <input type="text" placeholder="Apellidos" [(ngModel)]="this.userInfo.apellidos">
-                  </div>
-                </div>
+<div class="container-fluid">
+  <div class="row" id="barraMenu">
+    <div class="col-md-2">
+      <app-menu [newimage]="this.newImagen"></app-menu>
+    </div>
+    <div class="col-md-10">
+        <div class="align-rigth">
+            <div class="ui styled fluid accordion">
+        
+              <div class="title" [ngClass]="{'active': this.activeClass.info}" (click)="onActive('info_user')">
+                <i class="dropdown icon"></i>
+                <h5 style="display: inline-block;">Información personal</h5>
               </div>
-              <div class="field">
-                <div class="two fields">
-                  <div class="field">
-                    <label>Email</label>
-                    <input type="email" placeholder="Email" disabled [(ngModel)]="this.userInfo.email">
-                  </div>
-                  <div class="field">
-                    <label>Edad</label>
-                    <input type="number" placeholder="Edad" [(ngModel)]="this.userInfo.edad">
-                  </div>
-                </div>
-              </div>
-              <div class="ui left aligned grid">
-                <div class="center aligned two column row">
-                  <div class="column enlace" style="padding-top: 8px;" (click)="onChangePassword()">
-                    Cambiar contraseña
-                  </div>
-                  <div class="column">
-                    <div class="field">
-                      <div class="two fields">
-                        <div class="field ui primary button" (click)="onSave()">
-                          Guardar
+              <div class="content" [ngClass]="{'active': this.activeClass.info}">
+                <div style="display: flex">
+                  <div id="subirFoto" class="item" style="display: flex; width: 100%;">
+                    <div class="ui image" style="margin: 10px; width: 20%;">
+                      <img class="ui image medium circular" style="width: 90%;" [src]="this.userInfo.imagen">
+                      <div class="btn btn-pink" (click)="onFileSelected()">
+                        Cambiar imagen
+                      </div>
+                    </div>
+                  <div class="content" style="width: 80%">
+                    <div class="ui form">
+                      <div class="field">
+                        <label>Nombre completo</label>
+                        <div class="two fields">
+                          <div class="field">
+                            <input type="text" placeholder="Nombre" [(ngModel)]="this.userInfo.nombre">
+                          </div>
+                          <div class="field">
+                            <input type="text" placeholder="Apellidos" [(ngModel)]="this.userInfo.apellidos">
+                          </div>
                         </div>
-                        <div class="field ui button" (click)="onDescartar()">
-                          Descartar
+                      </div>
+                      <div class="field">
+                        <div class="two fields">
+                          <div class="field">
+                            <label>Email</label>
+                            <input type="email" placeholder="Email" disabled [(ngModel)]="this.userInfo.email">
+                          </div>
+                          <div class="field">
+                            <label>Edad</label>
+                            <input type="number" placeholder="Edad" [(ngModel)]="this.userInfo.edad">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ui left aligned grid">
+                        <div class="center aligned two column row">
+                          <div class="column enlace" style="padding-top: 8px;" (click)="onChangePassword()">
+                            Cambiar contraseña
+                          </div>
+                          <div class="column">
+                            <div class="field">
+                              <div class="two fields">
+                                <div class="field btn btn-pink" (click)="onSave()">
+                                  Guardar
+                                </div>
+                                <div class="field btn btn-gray" (click)="onDescartar()">
+                                  Descartar
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="title" [ngClass]="{'active': this.activeClass.direccion}" (click)="onActive('direccion')">
-        <i class="dropdown icon"></i>
-        Dirección
-      </div>
-      <div class="content" [ngClass]="{'active': this.activeClass.direccion}">
-        <div class="ui form">
-          <div class="fields">
-            <div class="seven wide field">
-              <label>Colonia</label>
-              <input type="text" placeholder="Colonia" [(ngModel)]="this.userInfo.direccion.colonia">
-            </div>
-            <div class="seven wide field">
-              <label>Calle</label>
-              <input type="text" placeholder="Calle"  [(ngModel)]="this.userInfo.direccion.calle">
-            </div>
-            <div class="three wide field">
-              <label>Numero</label>
-              <input type="number" placeholder="Numero"  [(ngModel)]="this.userInfo.direccion.numero">
-            </div>
-          </div>
-          <div class="two fields">
-            <div class="field">
-              <label>Estado</label>
-              <input type="text" placeholder="Estado"  [(ngModel)]="this.userInfo.direccion.estado">
-            </div>
-            <div class="field">
-              <label>Pais</label>
-              <input type="text" placeholder="Pais"  [(ngModel)]="this.userInfo.direccion.pais">
-            </div>
-          </div>
-        </div>
-        <div class="ui right aligned grid">
-          <div class="center aligned two column row">
-            <div class="column"></div>
-            <div class="column">
-              <div class="field">
-                <div class="two fields">
-                  <div class="field ui primary button" (click)="onSave()">
-                    Guardar
+        
+              <div class="title" [ngClass]="{'active': this.activeClass.direccion}" (click)="onActive('direccion')">
+                <i class="dropdown icon"></i>
+                <h5 style="display: inline-block;">Dirección</h5>
+              </div>
+              <div class="content" [ngClass]="{'active': this.activeClass.direccion}">
+                <div class="ui form">
+                  <div class="fields">
+                    <div class="seven wide field">
+                      <label>Colonia</label>
+                      <input type="text" placeholder="Colonia" [(ngModel)]="this.userInfo.direccion.colonia">
+                    </div>
+                    <div class="seven wide field">
+                      <label>Calle</label>
+                      <input type="text" placeholder="Calle"  [(ngModel)]="this.userInfo.direccion.calle">
+                    </div>
+                    <div class="three wide field">
+                      <label>Numero</label>
+                      <input type="number" placeholder="Numero"  [(ngModel)]="this.userInfo.direccion.numero">
+                    </div>
                   </div>
-                  <div class="field ui button" (click)="onDescartar()">
-                    Descartar
+                  <div class="two fields">
+                    <div class="field">
+                      <label>Estado</label>
+                      <input type="text" placeholder="Estado"  [(ngModel)]="this.userInfo.direccion.estado">
+                    </div>
+                    <div class="field">
+                      <label>Pais</label>
+                      <input type="text" placeholder="Pais"  [(ngModel)]="this.userInfo.direccion.pais">
+                    </div>
+                  </div>
+                </div>
+                <div class="ui right aligned grid">
+                  <div class="center aligned two column row">
+                    <div class="column"></div>
+                    <div class="column">
+                      <div class="field">
+                        <div class="two fields">
+                          <div class="field btn btn-pink" (click)="onSave()">
+                            Guardar
+                          </div>
+                          <div class="field btn btn-gray" (click)="onDescartar()">
+                            Descartar
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="title" [ngClass]="{'active': this.activeClass.tarjeta}" (click)="onActive('tarjeta')">
-        <i class="dropdown icon"></i>
-        Tarjeta
-      </div>
-      <div class="content" [ngClass]="{'active': this.activeClass.tarjeta}">
-        <div class="ui form">
-          <div class="three fields">
-            <div class="field">
-              <label>Tipo</label>
-              <input type="text" placeholder="Tipo"  [(ngModel)]="this.userInfo.tarjeta.tipo">
-            </div>
-            <div class="field">
-              <label>Numero</label>
-              <input type="text" maxlength="16" placeholder="Numero"  [(ngModel)]="this.userInfo.tarjeta.numero">
-            </div>
-            <div class="field">
-              <label>CVC</label>
-              <input type="text" placeholder="CVC"  [(ngModel)]="this.userInfo.tarjeta.cvc">
-            </div>
-          </div>
-          <div class="field">
-            <label>Expiración</label>
-            <div class="two fields">
-              <div class="field">
-                <select class="ui fluid search dropdown"  [(ngModel)]="this.userInfo.tarjeta.expiracion.mes">
-                  <option value="">Mes</option>
-                  <option value="1">Enero</option>
-                  <option value="2">Febrero</option>
-                  <option value="3">Marzo</option>
-                  <option value="4">Abril</option>
-                  <option value="5">Mayo</option>
-                  <option value="6">Junio</option>
-                  <option value="7">Julio</option>
-                  <option value="8">Agosto</option>
-                  <option value="9">Septiembre</option>
-                  <option value="10">Octubre</option>
-                  <option value="11">Noviembre</option>
-                  <option value="12">Diciembre</option>
-                </select>
+        
+              <div class="title" [ngClass]="{'active': this.activeClass.tarjeta}" (click)="onActive('tarjeta')">
+                <i class="dropdown icon"></i>
+                <h5 style="display: inline-block;">Tarjeta</h5>
               </div>
-              <div class="field">
-                <input type="number" placeholder="Año"  [(ngModel)]="this.userInfo.tarjeta.expiracion.ano">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ui right aligned grid">
-          <div class="center aligned two column row">
-            <div class="column"></div>
-            <div class="column">
-              <div class="field">
-                <div class="two fields">
-                  <div class="field ui primary button" (click)="onSave()">
-                    Guardar
+              <div class="content" [ngClass]="{'active': this.activeClass.tarjeta}">
+                <div class="ui form">
+                  <div class="three fields">
+                    <div class="field">
+                      <label>Tipo</label>
+                      <input type="text" placeholder="Tipo"  [(ngModel)]="this.userInfo.tarjeta.tipo">
+                    </div>
+                    <div class="field">
+                      <label>Numero</label>
+                      <input type="text" maxlength="16" placeholder="Numero"  [(ngModel)]="this.userInfo.tarjeta.numero">
+                    </div>
+                    <div class="field">
+                      <label>CVC</label>
+                      <input type="text" placeholder="CVC"  [(ngModel)]="this.userInfo.tarjeta.cvc">
+                    </div>
                   </div>
-                  <div class="field ui button" (click)="onSave()">
-                    Descartar
+                  <div class="field">
+                    <label>Expiración</label>
+                    <div class="two fields">
+                      <div class="field">
+                        <select class="ui fluid search dropdown"  [(ngModel)]="this.userInfo.tarjeta.expiracion.mes">
+                          <option value="">Mes</option>
+                          <option value="1">Enero</option>
+                          <option value="2">Febrero</option>
+                          <option value="3">Marzo</option>
+                          <option value="4">Abril</option>
+                          <option value="5">Mayo</option>
+                          <option value="6">Junio</option>
+                          <option value="7">Julio</option>
+                          <option value="8">Agosto</option>
+                          <option value="9">Septiembre</option>
+                          <option value="10">Octubre</option>
+                          <option value="11">Noviembre</option>
+                          <option value="12">Diciembre</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <input type="number" placeholder="Año"  [(ngModel)]="this.userInfo.tarjeta.expiracion.ano">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui right aligned grid">
+                  <div class="center aligned two column row">
+                    <div class="column"></div>
+                    <div class="column">
+                      <div class="field">
+                        <div class="two fields">
+                          <div class="field btn btn-pink" (click)="onSave()">
+                            Guardar
+                          </div>
+                          <div class="field btn btn-gray" (click)="onSave()">
+                            Descartar
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+        
             </div>
+        
           </div>
-        </div>
-      </div>
-
     </div>
-
   </div>
 </div>

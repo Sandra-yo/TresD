@@ -1,19 +1,22 @@
-<div>
-  <app-menu></app-menu>
-
-  <div class="align-rigth">
-      <h2 class="ui header">Categorias</h2>
-    <div class="ui green two item menu">
-      <a class="item" [ngClass]="{'active': this.select.agregar}" (click)="onSelected('agregar')">
-        Agregar
-      </a>
-      <a class="item" [ngClass]="{'active': this.select.listar}" (click)="onSelected('listar')">
-        Listar
-      </a>
+<div class="container-fluid">
+  <div class="row" id="barraMenu">
+    <div class="col-md-2">
+      <app-menu></app-menu>
     </div>
-
-    <app-add-category *ngIf="this.select.agregar" [inputCategory]="categoryEdit" (changeOptionCategory)="onSelected('listar')"></app-add-category>
-    <app-list-category *ngIf="this.select.listar" (_categoySelected)="_outCategory($event)"></app-list-category>
-
+    <div class="col-md-10">
+        <div class="align-rigth">
+            <h2 class="textoCentrado">Categorias</h2>
+          <div class="ui green two item menu">
+            <a class="item" [ngClass]="{'active': this.select.agregar}" (click)="onSelected('agregar')">
+              Agregar
+            </a>
+            <a class="item" [ngClass]="{'active': this.select.listar}" (click)="onSelected('listar')">
+              Listar
+            </a>
+          </div>
+          <app-add-category *ngIf="this.select.agregar" [inputCategory]="categoryEdit" (changeOptionCategory)="onSelected('listar')"></app-add-category>
+          <app-list-category *ngIf="this.select.listar" (_categoySelected)="_outCategory($event)"></app-list-category>
+        </div>
+    </div>
   </div>
 </div>
