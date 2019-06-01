@@ -120,7 +120,8 @@ hr {
   box-shadow: 0 0 0 0.1rem #c34960;
 }
 
-@media only screen and (max-width: 950px) {
+/* MENÚ */ 
+@media only screen and (max-width: 900px) {
   .ui.vertical.menu{
     width: 100%;
     height: auto !important;
@@ -159,7 +160,7 @@ hr {
   }
 }
 
-
+/* PANELES DERECHA */ 
 @media only screen and (max-width: 1000px) {
   #subirFoto{
       display: block !important;

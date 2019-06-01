@@ -21,7 +21,7 @@
   font-family: 'Merienda', cursive;
 }
 
-@media only screen and (max-width: 758px) {
+@media only screen and (max-width: 980px) {
   .body{
     background-image: url('/../../../assets/images/fondoRegistro02.png');
     overflow-y: scroll;
